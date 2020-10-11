@@ -1,5 +1,18 @@
+ 
+ body {
+  font-family: 'Roboto', sans-serif;
+ }
+ 
+ .text-azul{
+    color: #2A91C2;
+  }
 
-* {
-    box-sizing: border-box;
-  } 
+.btn-azul{
+  background-color: #36a1d4;
+}
+
+.sb-azul{
+  color: #2A91C2;
+  font-size: 1.6em;
+}
 
