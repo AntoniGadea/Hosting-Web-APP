@@ -1,7 +1,7 @@
  <!--Header-->
- <?php include './templates/header.php';?>
+ <?php include '../templates/header.php';?>
 <!--Barra superior-->
-<?php include './templates/nav.php';?>
+<?php include '../templates/nav.php';?>
 
 
     <!--Resumen-->
@@ -16,7 +16,7 @@
     ?>
     </div>
 
-    <h1 class="display-2 text-center">Datos Formulario</h1>
+    <h1 class="display-2 text-center text-azul">Datos Formulario</h1>
 
     <hr>
 
@@ -39,5 +39,5 @@
     </div>
  
   <!--Footer-->
- <?php include './templates/footer.php';?>
+ <?php include '../templates/footer.php';?>
  <!--Final Footer-->

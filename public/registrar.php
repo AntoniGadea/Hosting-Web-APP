@@ -1,11 +1,11 @@
  <!--Header-->
- <?php include './templates/header.php';?>
+ <?php include '../templates/header.php';?>
 <!--Barra superior-->
-<?php include './templates/nav.php';?>
+<?php include '../templates/nav.php';?>
 
     <!--Formulario-->
     <div class="container mt-5 pt-5">
-    <form action="resumen.php" method="POST">
+    <form action="/public/resumen.php" method="POST">
         <div class="form-row">
             <div class="form-group col-md-6">
             <label for="inputNombre">Nombre</label>
@@ -45,5 +45,5 @@
     <!--Formulario-->
 
  <!--Footer-->
- <?php include './templates/footer.php';?>
+ <?php include '../templates/footer.php';?>
  <!--Final Footer-->

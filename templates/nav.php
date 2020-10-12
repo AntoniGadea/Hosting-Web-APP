@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white" style="font-size: 1.6em">
 <div class="container">
     <!--Logo-->
-    <a class="navbar-brand" href="index.php">
-        <img src="../img/logo.png" width="165" height="84" class="d-inline-block align-top" alt="logo">
+    <a class="navbar-brand" href="/index.php">
+        <img src="/public/img/logo.png" width="165" height="84" class="d-inline-block align-top" alt="logo">
     </a>
     <!--End Logo-->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,7 +15,7 @@
                 <a class="nav-link" href="/index.php">Inicio</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/views/admin.php">Administrador</a>
+                <a class="nav-link" href="/public/admin.php">Administrador</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Resources</a>
@@ -26,7 +26,7 @@
         </ul>
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a href="#!" class="btn btn-rounded btn-azul text-white">Iniciar sesión</a>
+                <a href="/public/registrado.php" class="btn btn-rounded btn-azul text-white">Iniciar sesión</a>
             </li>
         </ul>
     </div>
