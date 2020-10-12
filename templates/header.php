@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/public/css/style.css">
 
     <!--Font-->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
 
     <title>OH!</title>
   </head>

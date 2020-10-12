@@ -1,5 +1,5 @@
  body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Lato', sans-serif;
  }
  
  .text-azul{
@@ -8,9 +8,33 @@
 
 .btn-azul{
   background-color: #36a1d4;
+  border-radius: 20px;
+  transition: all 1s ease;
+}
+
+.btn-azul:hover{
+  background-color: #245c77;
 }
 
 .sb-azul{
   color: #2A91C2;
   font-size: 1.6em;
+}
+
+.zoom{
+  width: 70%;
+  transition: width 1s;
+}
+.zoom:hover{
+  width: 80%;
+}
+
+.icono-3{
+  width: 33%;
+  height: 33%;
+}
+
+.centrado{
+  margin: auto;
+  width: 70%;
 }
