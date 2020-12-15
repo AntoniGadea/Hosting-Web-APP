@@ -1,5 +1,5 @@
  <!--Header-->
- <?php include 'templates/header.php';?>
+<?php include 'templates/header.php';?>
 <!--Barra superior-->
 <?php include 'templates/nav.php';?>
 
@@ -11,10 +11,10 @@
   <!--Titulo-->
 
   <!--Fila-->
-    <div class="row centrado sb-azul col-lg-12 pt-5">
+    <div class="row sb-azul pt-5">
 
       <!--Col Inicio de sesion--> 
-        <div class="col-sm-12 col-md-12 col-lg-4">
+        <div class="col mx-5">
           <a href="public/registrado.php">
             <img class="zoom" src="public/img/iniciar.png" alt="iniciar">
           </a>
@@ -22,7 +22,7 @@
         </div>
 
       <!--Col Administrador--> 
-      <div class="col-sm-12 col-md-12 col-lg-4">
+      <div class="col mx-5">
         <a href="public/admin.php">
           <img class="zoom" src="public/img/admin.png" alt="admin">
         </a>
@@ -30,7 +30,7 @@
       </div>
          
       <!--Col Registrarse--> 
-      <div class="col-sm-12 col-md-12 col-lg-4">
+      <div class="col mx-5">
         <a href="public/registrar.php">
           <img class="zoom" src="public/img/registro.png" alt="registrarse">
         </a>

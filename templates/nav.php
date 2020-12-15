@@ -5,9 +5,7 @@
         <img src="/public/img/logo.png" width="165" height="84" class="d-inline-block align-top" alt="logo">
     </a>
     <!--End Logo-->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+
     <!--Links-->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mx-auto">
@@ -26,7 +24,7 @@
         </ul>
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a href="/public/registrado.php" class="btn btn-rounded btn-azul text-white">Iniciar sesión</a>
+                <a href="public/registrado.php" class="btn btn-rounded btn-azul text-white">Iniciar sesión</a>
             </li>
         </ul>
     </div>

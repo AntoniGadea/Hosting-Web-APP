@@ -22,19 +22,14 @@
 }
 
 .zoom{
-  width: 70%;
+  width: 60%;
   transition: width 1s;
 }
 .zoom:hover{
-  width: 80%;
+  width: 70%;
 }
 
 .icono-3{
   width: 33%;
   height: 33%;
-}
-
-.centrado{
-  margin: auto;
-  width: 70%;
 }
