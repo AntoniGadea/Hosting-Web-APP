@@ -3,35 +3,48 @@
 <!--Barra superior-->
 <?php include '../templates/nav.php';?>
 
-
-    <!--Resumen-->
-    <div class="container mt-5 pt-5">
     <?php
-    $nombre = $_POST['nombre'];
-    $apellidos = $_POST['apellidos'];
-    $email = $_POST['email'];
-    $password1 = $_POST['password1'];
-    $password2 = $_POST['password2'];
-    $tipo = $_POST['tipo'];
-    $error = "";
+        $nombre = $_POST['nombre'];
+        $apellidos = $_POST['apellidos'];
+        $email = $_POST['email'];
+        $password1 = $_POST['password1'];
+        $password2 = $_POST['password2'];
+        $tipo = $_POST['tipo'];
+        $errorPaswd = "";
+        $errorEmail = "";
 
-    $servidor = '127.0.0.1';
-    $usuari = 'hosting_toniGadea';
-    $contrasenya = $password1;
-    $db = 'hosting_toniGadea';
+        $servidor = '127.0.0.1';
+        $usuari = 'hosting_toniGadea';
+        $contrasenya = $password1;
+        $db = 'hosting_toniGadea';
 
-    if($password1 != $password2){
-        $error = "Las contraseñas no coinciden";
-        header('Location: /public/registrar.php?error='.$error);  
-    }else{
-       
+        if($password1 != $password2){
+            $errorPaswd = "Las contraseñas no coinciden";
+            header('Location: /public/registrar.php?errorPasswd='.$errorPaswd);  
+        }
+        
+        $conexio = new mysqli_connect($servidor, $usuari, $contrasenya, $db);
 
+        if($conexio->connect_error)
+            die ("Error de connexió:".$connexio->connect_error);
 
-    }
+        $sql = "SELECT * FROM users WHERE correu ='.$email.'";
 
+        if ($connexio->query($sql) === TRUE) {
+            if ($resultat->num_rows > 0)) {
+                $errorEmail = "Este correo ya ha sido registrado";
+                header('Location: /public/registrar.php?errorEmail='.$errorEmail); 
+            }
+           } else {
+                $date = date("Y/m/d");
+                $sql = "INSERT INTO users ($nombre, $apellidos, $email, $tipo, $date)";
+
+                $connexio->query($sql);
+           }
+        
+        $connexio->close(); 
     ?>
-    </div>
-
+    <!--Resumen-->
     <h1 class="display-2 text-center text-azul">Datos Formulario</h1>
 
     <hr>

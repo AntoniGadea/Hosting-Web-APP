@@ -1,7 +1,12 @@
 <?php
-    $error = "";
-    if(isset($_GET['error'])){
-    $error = $_GET['error'];
+    $errorPasswd = "";
+    $errorEmail = "";
+
+    if(isset($_GET['errorPasswd'])){
+    $errorPasswd = $_GET['errorPasswd'];
+    }
+    if(isset($_GET['errorEmail'])){
+        $errorEmail = $_GET['errorEmail'];
     }
 ?>
 
@@ -26,6 +31,9 @@
         <div class="form-group">
             <label for="Email">Email</label>
             <input name="email" type="email" class="form-control" id="inputEmail" placeholder="ejemplo@dominio.com" required>
+            <?php 
+                echo '<span class="text-danger">'.$errorEmail.'</span>';
+            ?>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6 col-sm-2">
@@ -37,7 +45,7 @@
             <input name="password2" type="password" class="form-control" id="inputPassword2" placeholder="********"  minlength="6" required>
             </div>
             <?php 
-                echo '<span class="text-danger">'.$error.'</span>';
+                echo '<span class="text-danger">'.$errorPasswd.'</span>';
             ?>
         </div>
         <div class="form-group">
