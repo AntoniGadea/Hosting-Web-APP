@@ -1,4 +1,4 @@
- <!--Header-->
+<!--Header-->
 <?php include 'templates/header.php';?>
 <!--Barra superior-->
 <?php include 'templates/nav.php';?>
@@ -6,7 +6,7 @@
 <div class="container-fluid text-center">
   <!--Titulo-->
   <div class="container my-5">
-    <h1 class="display-1 my-5 text-azul">Bienvenido!</h1>
+    <h1 class="display-1 my-5 text-azul">Bienvenido! <?php if(isset($_SESSION['user'])){echo $_SESSION['user'];}?></h1>
   </div>
   <!--Titulo-->
 

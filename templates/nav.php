@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-white" style="font-size: 1.5em">
 <div class="container-fluid mx-5 px-5 pt-1">
     <!--Logo-->
@@ -24,7 +25,15 @@
         </ul>
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a href="public/registrado.php" class="btn btn-rounded btn-azul text-white">Iniciar sesión</a>
+                <a href="/public/registrado.php" class="btn btn-rounded btn-azul text-white">
+                <?php
+                    if(isset($_SESSION['user'])){
+                        echo "Ver perfil";
+                    }else{
+                        echo "Iniciar sesión";
+                    }
+                ?>
+                </a>
             </li>
         </ul>
     </div>
