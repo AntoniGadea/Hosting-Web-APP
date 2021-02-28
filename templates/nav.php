@@ -22,6 +22,9 @@
             <li class="nav-item">
                 <a class="nav-link px-4" href="#">FAQ</a>
             </li>
+            <?php
+            if(isset($_SESSION['user'])){echo "<li  class='nav-item'><a class='nav-link px-4 btn btn-danger text-white' href='/public/src/logout.php'>LogOut</a></li>";}
+            ?>
         </ul>
         <ul class="navbar-nav">
             <li class="nav-item">

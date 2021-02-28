@@ -46,6 +46,12 @@
             $sql = "INSERT INTO users (nom, cognoms, correu, clauusuari, tipuscompte, fecha) VALUES ('$nombre', '$apellidos', '$email', '$password', '$tipo', '$date')";
             $conexio->query($sql);
         $conexio->close();
+
+        $dia = date("Y")."/".date("n")."/".date("j");
+        $hora = date("G").":".date("i").":".date("s");
+        $fp = fopen("../log/usuaris.log","a");
+        fputs($fp, "Usuari registrat al sistema: $email - Dia: $dia - Hora: $hora \n");
+        fclose($fp);
     ?>
     <!--Resumen-->
     <h1 class="display-2 text-center text-azul">Datos Formulario</h1>
