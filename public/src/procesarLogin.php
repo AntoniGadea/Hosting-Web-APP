@@ -26,12 +26,24 @@ if($resultat->num_rows > 0){
     while($row = $resultat->fetch_assoc()) {
         $hash = implode("",$row);
         if(password_verify($password,$hash)){
+            $dia = date("Y")."/".date("n")."/".date("j");
+            $hora = date("G").":".date("i").":".date("s");
+            $fp = fopen("../../log/usuaris.log","a");
+            fputs($fp, "Usuari accedeix al sistema: $email - Dia: $dia - Hora: $hora \n");
+            fclose($fp);
+
             $_SESSION['user'] = $email;
             header('Location: /index.php');
             exit();
         }
       }  
 }
+$dia = date("Y")."/".date("n")."/".date("j");
+$hora = date("G").":".date("i").":".date("s");
+$fp = fopen("../../log/usuaris.log","a");
+fputs($fp, "Intent de acces al sistema: $email - Dia: $dia - Hora: $hora \n");
+fclose($fp);
+
     header('Location: /public/registrado.php?error=Email o contraseña no valida');
     exit();
 

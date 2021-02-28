@@ -10,7 +10,14 @@
 ?>
 
 <!--Datos Usuario-->
-<?php
+    <?php
+
+    if(isset($_GET['log'])){
+        $log = $_GET['log'];
+    }else{
+        $log = false;
+    }
+
     if(isset($_SESSION['user'])){
         include '../templates/datosUsuario.php';
     }
@@ -20,8 +27,13 @@
     $usuari = 'root';
     $contrasenya = '';
     $db = 'hosting_tonigadea';
-
-    $email = $_SESSION['user'];
+    
+    if(isset($_SESSION['user'])){
+        $email = $_SESSION['user'];
+    }else{
+        $email = "";
+    }
+   
 
     $conexio = new mysqli($servidor, $usuari, $contrasenya, $db);
 
@@ -37,12 +49,42 @@
        echo "<td>".$row['cognoms']."</td>";
        echo "<td>".$email."</td>";
        echo "<td>".$row['tipuscompte']."</td>";
-      } 
-    
-    echo " </tr>
+       echo " </tr>
         </table>
         </div>
+        <div class='text-center m-2 p-2'>
+        <a class='btn btn-info' href=/public/modificarUsuario.php >Modificar datos</a>
+        <a class='btn btn-danger' href='/public/src/delete.php?email=".$email."' >Dar de baja</a>";
+       
+       if($log == true){
+        echo "<a class='btn btn-success' href='/public/registrado.php?log=0' >Esconder Logs</a>";
+       }else{
+        echo "<a class='btn btn-success' href='/public/registrado.php?log=1' >Ver Logs</a>";
+       }
+       
+        echo "</div>
+        </div>
         </div>";
+      } 
+      
+      if($log == true){
+        echo "<div class='container'><ul>";
+        $fp = fopen("../log/usuaris.log","r");
+        if($fp){
+            while(($bufer = fgets($fp, 4096)) !== false){
+                echo "<li>$bufer</li>";
+            }
+            echo "</ul> </div>";
+        }
+
+      
+
+        
+
+         
+      }
+    
+    
 
     $conexio->close();
 ?>
@@ -50,7 +92,18 @@
 <?php
 if(isset($_GET['error'])){
         $error = $_GET['error'];
-        echo "<h5 class='text-danger'>$error</h5>";
+        echo "<h5 class='text-danger text-center'>$error</h5>";
+    }
+
+    if(isset($_GET['msg'])){
+        $msg = $_GET['msg'];
+        echo "<h5 class='text-success text-center ml-5'>$msg</h5>";
+    }
+
+    
+
+    if($log){
+
     }
 ?>
 
