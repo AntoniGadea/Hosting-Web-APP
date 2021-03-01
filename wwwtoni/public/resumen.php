@@ -35,7 +35,7 @@
     
         $uploadPath = $currentDirectory . $uploadDirectory . basename($fileName); 
     
-          if ($fileSize > 2000) {
+          if ($fileSize > 200000) {
             $error = "El archivo excede el tamaño permitido (200KB)";
             header('Location: /public/registrar.php?error='.$error);
             exit();
