@@ -1,7 +1,6 @@
 <?php
     $errorPasswd = "";
     $errorEmail = "";
-    $error =  "";
 
     if(isset($_GET['errorPasswd'])){
     $errorPasswd = $_GET['errorPasswd'];
@@ -9,19 +8,10 @@
     if(isset($_GET['errorEmail'])){
         $errorEmail = $_GET['errorEmail'];
     }
-    if(isset($_GET['error'])){
-        $error = $_GET['error'];
-    }
 ?>
-
- <!--Header-->
- <?php include '../templates/header.php';?>
-<!--Barra superior-->
-<?php include '../templates/nav.php';?>
-
     <!--Formulario-->
     <div class="container mt-5 pt-5">
-    <form action="/public/resumen.php" enctype="multipart/form-data" method="POST">
+    <form action="./src/anadir.php" method="POST">
         <div class="form-row">
             <div class="form-group col-md-6">
             <label for="inputNombre">Nombre</label>
@@ -61,20 +51,7 @@
                 </select>
             </div>
         </div>
-        <div class="form-group">
-            <div class="form-group">
-            <label for="imagen">Imagen de perfil</label>
-            <input type="file" name="imagen" id="imagen" class="form-control">
-            </div>
-            <?php 
-                echo '<span class="text-danger">'.$error.'</span>';
-            ?>
-        </div>
-        <button type="submit" class="btn btn-primary">Enviar</button>
+        <button type="submit" class="btn btn-primary">Añadir</button>
     </form>
     </div>
     <!--Formulario-->
-
- <!--Footer-->
- <?php include '../templates/footer.php';?>
- <!--Final Footer-->

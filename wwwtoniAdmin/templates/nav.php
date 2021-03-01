@@ -11,7 +11,18 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mx-auto">
             <li class="nav-item">
-                <a class="nav-link px-4" href="/index.php">Inicio</a>
+                <a class="nav-link px-4" href="/">Inicio</a>
+            </li>
+            <?php
+            $home = "0";
+            if(isset($_GET['home'])){$home = $_GET['home'];}
+            if($home){
+                header("Location: localhost:80");
+                exit();
+            }
+            ?>
+            <li class="nav-item">
+                <a class="nav-link px-4" href="/admin.php?home=1">Pagina Hosting</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link px-4" href="#">Resources</a>
@@ -19,21 +30,16 @@
             <li class="nav-item">
                 <a class="nav-link px-4" href="#">FAQ</a>
             </li>
-            <?php
-            if(isset($_SESSION['user'])){echo "<li  class='nav-item'><a class='nav-link px-4 btn btn-danger text-white' href='/public/src/logout.php'>LogOut</a></li>";}
-            ?>
         </ul>
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a href="/public/registrado.php" class="btn btn-rounded btn-azul text-white">
+                
                 <?php
                     if(isset($_SESSION['user'])){
-                        echo "Ver perfil";
-                    }else{
-                        echo "Iniciar sesión";
+                        echo "<li  class='nav-item'><a class='nav-link px-4 btn btn-danger text-white' href='/src/logout.php'>LogOut</a></li>";
                     }
                 ?>
-                </a>
+                
             </li>
         </ul>
     </div>

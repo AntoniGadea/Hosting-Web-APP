@@ -1,24 +1,14 @@
-<!--Header-->
-<?php include '../templates/header.php';?>
-<!--Barra superior-->
-<?php include '../templates/nav.php';?>
-<!--Datos Usuario-->
 <?php
+include "./src/BDInfo.php";
 
     $errorPasswd = "";
 
     if(isset($_GET['errorPasswd'])){
     $errorPasswd = $_GET['errorPasswd'];
     }
-
-    //DB
-    $servidor = '127.0.0.1';
-    $usuari = '2daw06_daw';
-    $contrasenya = '10261259';
-    $db = 'hosting_tonigadea';
     
     if(isset($_SESSION['user'])){
-        $email = $_SESSION['user'];
+        $email = $_GET['modificar'];
     }else{
         $email = "";
     }
@@ -34,7 +24,7 @@
     $resultat = $conexio->query($sql);
     
     echo '<div class="container mt-5">
-            <form action="/public/src/modificar.php" method="POST">';
+            <form action="/src/modificarUsuario.php" method="POST">';
 
     while($row = $resultat->fetch_assoc()) {
         echo "<div class='form-group'> <label for='nombre'>Nombre</label>";
@@ -51,14 +41,12 @@
        echo "<select name='tipo' class='form-control' value='".$row['tipuscompte']."'>";
        echo "<option value='Normal'>Normal</option>";
        echo "<option value='Premium'>Premium</option>";
-       echo "</select>";
-       echo "<img src='../../imgperfil/".$row['imatge']."' class='w-25 m-3' ></div>";
-       
+       echo "</select> </div>";
       } 
     
     echo " <div class='form-group'>
                 <button type='submit' class='btn btn-primary'>Modificar</button>
-                <a class='btn btn-danger' href='/public/registrado.php' >Cancelar</a> </div>
+                <a class='btn btn-danger' href='/' >Cancelar</a> </div>
             </form>
             </div>";
 
@@ -71,7 +59,3 @@ if(isset($_GET['error'])){
         echo "<h5 class='text-danger'>$error</h5>";
     }
 ?>
-
- <!--Footer-->
- <?php include '../templates/footer.php';?>
- <!--Final Footer-->

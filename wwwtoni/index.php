@@ -11,26 +11,18 @@
   <!--Titulo-->
 
   <!--Fila-->
-    <div class="row sb-azul pt-5">
+    <div class="row sb-azul d-flex justify-content-center pt-5">
 
       <!--Col Inicio de sesion--> 
-        <div class="col mx-5">
+        <div class="col-3 mx-5">
           <a href="public/registrado.php">
             <img class="zoom" src="public/img/iniciar.png" alt="iniciar">
           </a>
           <p>Inicio de sesión</p>
         </div>
-
-      <!--Col Administrador--> 
-      <div class="col mx-5">
-        <a href="public/admin.php">
-          <img class="zoom" src="public/img/admin.png" alt="admin">
-        </a>
-        <p>Administrador</p>
-      </div>
          
       <!--Col Registrarse--> 
-      <div class="col mx-5">
+      <div class="col-3 mx-5">
         <a href="public/registrar.php">
           <img class="zoom" src="public/img/registro.png" alt="registrarse">
         </a>

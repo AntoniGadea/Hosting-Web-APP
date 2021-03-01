@@ -19,6 +19,29 @@
         $usuari = '2daw06_daw';
         $contrasenya = '10261259';
         $db = 'hosting_tonigadea';
+        
+        //File
+        $currentDirectory = getcwd();
+        $uploadDirectory = "../../imgperfil/";
+    
+        $errors = []; // Store errors here
+    
+        $fileExtensionsAllowed = ['jpeg','jpg','png']; // These will be the only file extensions allowed 
+    
+        $fileName = $_FILES['imagen']['name'];
+        $fileSize = $_FILES['imagen']['size'];
+        $fileTmpName  = $_FILES['imagen']['tmp_name'];
+        $fileType = $_FILES['imagen']['type'];
+    
+        $uploadPath = $currentDirectory . $uploadDirectory . basename($fileName); 
+    
+          if ($fileSize > 2000) {
+            $error = "El archivo excede el tamaño permitido (200KB)";
+            header('Location: /public/registrar.php?error='.$error);
+            exit();
+          }
+    
+        $didUpload = move_uploaded_file($fileTmpName, $uploadPath);
 
         if($password1 != $password2){
             $errorPaswd = "Las contraseñas no coinciden";
@@ -43,7 +66,11 @@
             }
 
             $date = date("Y/m/d");
-            $sql = "INSERT INTO users (nom, cognoms, correu, clauusuari, tipuscompte, fecha) VALUES ('$nombre', '$apellidos', '$email', '$password', '$tipo', '$date')";
+            if($fileName){
+                $sql = "INSERT INTO users (nom, cognoms, correu, clauusuari, tipuscompte, fecha, imatge) VALUES ('$nombre', '$apellidos', '$email', '$password', '$tipo', '$date','$fileName')";
+            }else{
+                $sql = "INSERT INTO users (nom, cognoms, correu, clauusuari, tipuscompte, fecha) VALUES ('$nombre', '$apellidos', '$email', '$password', '$tipo', '$date')";
+            }
             $conexio->query($sql);
         $conexio->close();
 
