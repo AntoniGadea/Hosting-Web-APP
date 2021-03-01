@@ -16,8 +16,8 @@
         $algorisme = 'PASSWORD_BCRYPT';
         //DB
         $servidor = '127.0.0.1';
-        $usuari = 'root';
-        $contrasenya = '';
+        $usuari = '2daw06_daw';
+        $contrasenya = '10261259';
         $db = 'hosting_tonigadea';
 
         if($password1 != $password2){

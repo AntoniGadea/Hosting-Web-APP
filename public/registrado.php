@@ -24,8 +24,8 @@
 
     //DB
     $servidor = '127.0.0.1';
-    $usuari = 'root';
-    $contrasenya = '';
+    $usuari = '2daw06_daw';
+    $contrasenya = '10261259';
     $db = 'hosting_tonigadea';
     
     if(isset($_SESSION['user'])){
