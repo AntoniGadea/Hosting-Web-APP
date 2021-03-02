@@ -49,6 +49,7 @@
        echo "<td>".$row['cognoms']."</td>";
        echo "<td>".$email."</td>";
        echo "<td>".$row['tipuscompte']."</td>";
+       echo "<td><img style='width: 40px;' src='/imgperfil/".$row['imatge']."' ></td>";
        echo " </tr>
         </table>
         </div>
@@ -69,17 +70,22 @@
       
       if($log == true){
         echo "<div class='container'><ul>";
+        
+        if (isset($_SESSION['user'])) {
+            $correu_a_mostrar = $_SESSION['user'];
+        }
+
+        $patro="/$correu_a_mostrar/i"; 
         $fp = fopen("../log/usuaris.log","r");
         if($fp){
             while(($bufer = fgets($fp, 4096)) !== false){
-                echo "<li>$bufer</li>";
+                if (preg_match($patro,$bufer)) {
+                    echo "<li>$bufer</li>";
+                }
+                
             }
             echo "</ul> </div>";
         }
-
-      
-
-        
 
          
       }

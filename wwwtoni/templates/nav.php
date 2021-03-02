@@ -9,9 +9,12 @@
 
     <!--Links-->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mx-auto">
+        <ul class="navbar-nav mx-auto d-flex align-items-center">
             <li class="nav-item">
                 <a class="nav-link px-4" href="/index.php">Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link px-4" href="http://localhost:5000">Administrador</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link px-4" href="#">Resources</a>
@@ -20,15 +23,23 @@
                 <a class="nav-link px-4" href="#">FAQ</a>
             </li>
             <?php
-            if(isset($_SESSION['user'])){echo "<li  class='nav-item'><a class='nav-link px-4 btn btn-danger text-white' href='/public/src/logout.php'>LogOut</a></li>";}
+            if(isset($_SESSION['user'])){echo "<li  class='nav-item'><a class='nav-link px-4 my-2 mx-5 btn btn-danger text-white' href='/public/src/logout.php'>LogOut</a></li>";}
+           
             ?>
+
         </ul>
-        <ul class="navbar-nav">
+        <ul class="navbar-nav d-flex align-items-center">
+            <?php
+        if(isset($_SESSION['user'])){echo '<li class="nav-item">
+                <img class="rounded-circle mx-5" style="width: 90px;" src="/imgPerfil/default.jpg">
+            </li>';}
+            ?>
             <li class="nav-item">
                 <a href="/public/registrado.php" class="btn btn-rounded btn-azul text-white">
                 <?php
                     if(isset($_SESSION['user'])){
                         echo "Ver perfil";
+                         
                     }else{
                         echo "Iniciar sesión";
                     }

@@ -3,7 +3,7 @@ include "../src/BDInfo.php";
 
         $nombre = $_POST['nombre'];
         $apellidos = $_POST['apellidos'];
-        $email =  $_SESSION["user"];
+        $email =  $_POST["email"];
         $password1 = $_POST['password1'];
         $password2 = $_POST['password2'];
         $tipo = $_POST['tipo'];

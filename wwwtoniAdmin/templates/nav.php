@@ -22,7 +22,7 @@
             }
             ?>
             <li class="nav-item">
-                <a class="nav-link px-4" href="/admin.php?home=1">Pagina Hosting</a>
+                <a class="nav-link px-4" href="http://localhost/index.php">Pagina Hosting</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link px-4" href="#">Resources</a>
@@ -33,7 +33,6 @@
         </ul>
         <ul class="navbar-nav">
             <li class="nav-item">
-                
                 <?php
                     if(isset($_SESSION['user'])){
                         echo "<li  class='nav-item'><a class='nav-link px-4 btn btn-danger text-white' href='/src/logout.php'>LogOut</a></li>";

@@ -10,6 +10,7 @@
                 <th scope="col">Apellidos</th>
                 <th scope="col">Email</th>
                 <th scope="col">Rango</th>
+                <th scope="col">Imagen</th>
             </tr>
         </thead>
             <tr>

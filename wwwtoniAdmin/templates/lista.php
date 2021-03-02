@@ -33,7 +33,7 @@ if($usuario->get_id() > 0) echo "<td><a class='btn btn-danger' href='../src/dele
         <tr>
             <td colspan='7'>
             <a class='btn btn-success' href='/?add=1'>Añadir usuario</a>
-            <a class='btn btn-secondary' href='#'>Backup</a>
+            <a class='btn btn-secondary' href='./src/backup.php'>Backup</a>
             ";
            if($log){echo "<a class='btn btn-dark' href='/?log=0'>Log</a>";}else{ echo "<a class='btn btn-dark' href='/?log=1'>Log</a>";} 
             echo "</td>
